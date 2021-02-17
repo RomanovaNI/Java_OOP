@@ -30,9 +30,28 @@ public class Snowflake_Solution {
     private static void fillArray(String[][] input, char element) {
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input.length; j++) {
-                input[i][j]= String.valueOf(element);
+                input[i][j] = " ";
             }
-
+        }
+        for (int i = 0; i < input.length; i++) {
+            input[i][input.length / 2] = String.valueOf(element);
+        }
+        for (int i = 0; i < input.length; i++) {
+            input[input.length / 2][i] = String.valueOf(element);
+        }
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < input.length; j++) {
+                if (i == j) {
+                    input[i][j] = String.valueOf(element);
+                }
+            }
+        }
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < input.length; j++) {
+                if (i + j == input.length - 1) {
+                    input[i][j] = String.valueOf(element);
+                }
+            }
         }
     }
 }
