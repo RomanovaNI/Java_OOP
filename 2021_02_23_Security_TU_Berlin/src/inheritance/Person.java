@@ -53,7 +53,8 @@ public class Person {
     void walks() {
         System.out.println("is walking");
     }
-    void getsSalary(){
+
+    void getsSalary() {
         System.out.println("gets salary!Wow");
     }
 
@@ -64,6 +65,6 @@ public class Person {
                 "second name " + secondName + " " +
                 "uniID " + uniID + " " +
                 "gender " + gender + " " +
-                "age " + age +"}";
+                "age " + age + "}";
     }
 }

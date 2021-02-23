@@ -5,7 +5,7 @@ public class Worker extends Person {
 
     public Worker(String firstName, String secondName, String uniID, String gender, int age, boolean workSatisfaction) {
         super(firstName, secondName, uniID, gender, age);
-       this.workSatisfaction= workSatisfaction;
+        this.workSatisfaction = workSatisfaction;
     }
 
     public Worker(String firstName, String secondName, String uniID) {
@@ -34,7 +34,7 @@ public class Worker extends Person {
 
     @Override
     public String toString() {
-        return "Worker: "  + super.toString()+ " "+
-        "workSatisfaction " + workSatisfaction;
+        return "Worker: " + super.toString() + " " +
+                "workSatisfaction " + workSatisfaction;
     }
 }

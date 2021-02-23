@@ -4,7 +4,6 @@ public class Academy {
     public Person[] persons;
     public int size;
 
-
     public Academy(int capacity) {
         persons = new Person[capacity];
         size = 0;

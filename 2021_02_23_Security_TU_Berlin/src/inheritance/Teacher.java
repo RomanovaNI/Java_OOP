@@ -2,7 +2,7 @@ package inheritance;
 
 public class Teacher extends Person {
     private double salary;
-    ;
+
 
     public Teacher(String firstName, String secondName, String uniID, String gender, int age, double salary) {
         super(firstName, secondName, uniID, gender, age);
