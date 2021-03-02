@@ -15,5 +15,11 @@ public class AnimalTest {
         System.out.println(peppa);
         peppa.makesSound();
         peppa.drinks();
+        System.out.println("======");
+
+        Dragon dragon1=new Dragon("Змей Горыныч", 234, "male", "black");
+        System.out.println(dragon1);
+        dragon1.makesSound();
+        dragon1.drinks();
     }
 }
