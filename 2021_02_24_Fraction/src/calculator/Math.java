@@ -12,7 +12,14 @@ public class Math {
         // + б.нумератор * cdenominator / b.denominator;
         cDenominator = leastCommonMultiple(a.getDenominator(), b.getDenominator());
         cNumerator = a.getNumerator() * cDenominator / a.getDenominator() + b.getNumerator() * cDenominator / b.getDenominator();
+
+
+        int reduction=gcdRecursionAlgorithm(cNumerator, cDenominator);
+        cNumerator = cNumerator / reduction;
+        cDenominator = cDenominator /reduction;
+
         Fraction c = new Fraction(cNumerator, cDenominator);
+
 
         return c;
     }
@@ -21,6 +28,13 @@ public class Math {
         int cNumerator, cDenominator;
         cDenominator = leastCommonMultiple(a.getDenominator(), b.getDenominator());
         cNumerator = a.getNumerator() * cDenominator / a.getDenominator() - b.getNumerator() * cDenominator / b.getDenominator();
+
+        int reduction=gcdRecursionAlgorithm(cNumerator, cDenominator);
+
+        cNumerator = cNumerator / reduction;
+        cDenominator = cDenominator /reduction;
+
+
         Fraction c = new Fraction(cNumerator, cDenominator);
 
         return c;
@@ -30,6 +44,12 @@ public class Math {
         int cNumerator, cDenominator;
         cNumerator = a.getNumerator() * b.getNumerator();
         cDenominator = a.getDenominator() * b.getDenominator();
+
+        int reduction=gcdRecursionAlgorithm(cNumerator, cDenominator);
+
+        cNumerator = cNumerator / reduction;
+        cDenominator = cDenominator /reduction;
+
         Fraction c = new Fraction(cNumerator, cDenominator);
 
         return c;
@@ -39,6 +59,12 @@ public class Math {
         int cNumerator, cDenominator;
         cNumerator = a.getNumerator() * b.getDenominator();
         cDenominator = a.getDenominator() * b.getNumerator();
+
+        int reduction=gcdRecursionAlgorithm(cNumerator, cDenominator);
+
+        cNumerator = cNumerator / reduction;
+        cDenominator = cDenominator /reduction;
+
         Fraction c = new Fraction(cNumerator, cDenominator);
 
         return c;
