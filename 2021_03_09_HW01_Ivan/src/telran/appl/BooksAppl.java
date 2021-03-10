@@ -1,7 +1,7 @@
 
 public class BooksAppl {
     public static void main(String[] args) {
-        Book book1 = new Book(1234567, "Tolstoi", "War and Piece", 572, 2.6);
+        Book book1 = new Book(1234567, "Tolstoi", "War and Piece", 572, 2.687);
         Book book2 = new Book(654321, "Turgenev", "Asya", 122, 1.3);
         Book book3 = new Book(7777777, "Tutchev", "    ", 15, 3.3);
         Book book4 = new Book(1111111, "Pushkin", "Evgenyi Onegin", 102, 10.6);
@@ -21,6 +21,10 @@ public class BooksAppl {
         Book[] shelf1 = new Book[]{book1, book2, book3, book4, book5, book6};
         // printBooks(shelf1);
         System.out.println("Price for the books when it has corect pages and price per page is " + getTotalPrice(shelf1) + " rub");
+        System.out.printf("Total price  =%.2f\n", getTotalPrice(shelf1));
+        int x=123;
+        System.out.printf("x = %d\n",x);
+        System.out.printf("price = %.2f and x = %d\n",getTotalPrice(shelf1),x);
     }
 
     private static double getTotalPrice(Book[] books) {

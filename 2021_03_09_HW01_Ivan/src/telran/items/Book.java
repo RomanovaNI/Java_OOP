@@ -6,11 +6,9 @@ public class Book {
     private double pricePerPage;
 
     public Book(long isbn, String author, String title, int pages, double pricePerPage) {
-        if (isbn > 99_999 && isbn < 1000_000) {
-            System.out.println("incorrect isbn");
-        } else {
+        if (isbn > 99_999 && isbn < 1000_000)
             this.isbn = isbn;
-        }
+
         if (author == null || author.trim().isEmpty()) {
             this.author = "No author info";
         } else {
@@ -26,15 +24,12 @@ public class Book {
         } else {
             this.pages = pages;
         }
-
-        if (pricePerPage <= 0.0 || pricePerPage >= 10.0) {
-            System.out.println("No price info");
-        } else {
-            this.pricePerPage = pricePerPage;
-        }
+        setPricePerPage(pricePerPage);
     }
 
     public Book() {
+        author="no author";
+        title="no title";
     }
 
     public long getIsbn() {
@@ -48,7 +43,7 @@ public class Book {
 
     public void setAuthor(String author) {
         if (author == null || author.trim().isEmpty()) {
-            this.author = "No author info";
+            this.author = "wrong author";
         } else {
             this.author = author;
         }
@@ -60,7 +55,7 @@ public class Book {
 
     public void setTitle(String title) {
         if (title == null || title.trim().isEmpty()) {
-            this.title = "No title book info";
+            this.title = "wrong title";
         } else {
             this.title = title;
         }
@@ -83,10 +78,11 @@ public class Book {
     }
 
     public void setPricePerPage(double pricePerPage) {
-        if (pricePerPage <= 0.0 && pricePerPage >= 10.0) {
+        if (pricePerPage > 0.0 && pricePerPage <10.0) {
+            this.pricePerPage = pricePerPage;
             System.out.println("No price info");
         } else {
-            this.pricePerPage = pricePerPage;
+            System.out.println("No price info");
         }
     }
 
