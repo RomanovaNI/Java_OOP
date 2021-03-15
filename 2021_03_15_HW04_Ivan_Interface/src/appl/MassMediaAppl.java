@@ -24,10 +24,13 @@ public class MassMediaAppl {
 
         //      displayPrintable(array);
         getPrintableElements(array);
+        Arrays.toString(array);
+        printIprintableArray(getPrintableElements(array));
+
 
     }
 
-    private static void printIprintableArray(MassMedia[] array) {
+    private static void printIprintableArray(IPrintable[] array) {
         System.out.println(" The printable elements are: ");
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
@@ -39,7 +42,7 @@ public class MassMediaAppl {
 
         IPrintable[] output = new IPrintable[]{};
 
-        for (int i = 0; i < input.length; i++) {
+        for (int i = 0; i < output.length; i++) {
             if (input[i] instanceof IPrintable) {
                 output[i] = (IPrintable) input[i];
             }
