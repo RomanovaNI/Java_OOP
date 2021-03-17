@@ -24,7 +24,6 @@ public class MassMediaAppl {
 
         //      displayPrintable(array);
         getPrintableElements(array);
-        Arrays.toString(array);
         printIprintableArray(getPrintableElements(array));
 
 
@@ -40,7 +39,7 @@ public class MassMediaAppl {
 
     private static IPrintable[] getPrintableElements(MassMedia[] input) {
 
-        IPrintable[] output = new IPrintable[]{};
+        IPrintable[] output = new IPrintable[input.length];
 
         for (int i = 0; i < output.length; i++) {
             if (input[i] instanceof IPrintable) {
