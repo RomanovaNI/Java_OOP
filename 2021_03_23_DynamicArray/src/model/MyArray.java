@@ -69,13 +69,15 @@ public class MyArray implements IList {
         if (obj == null)
             return false;
         // Object temp = obj;
-        for (int i = 0; i < size - 1; i++) {
-            if (array[i].equals(obj)) {
+        for (int i = 0; i < size; i++) {
+
+            if (obj.equals(array[i])) {
                 array[i] = array[i + 1];
+
+                array[size - 1] = null;
+                size--;
+                return true;
             }
-            array[size - 1] = null;
-            size--;
-            return true;
         }
         return false;
     }
@@ -92,9 +94,9 @@ public class MyArray implements IList {
 
     @Override
     public int lastIndexOf(Object obj) {
-        for (int i = 0; i < size; i++) {
-            if (array[size - 1].equals(obj)) {
-                return size - 1;
+        for (int i = size - 1; i >= 0; i--) {
+            if (array[i].equals(obj)) {
+                return i;
             }
         }
         return -1;
@@ -112,6 +114,12 @@ public class MyArray implements IList {
 
     @Override
     public Object[] toArray() {
-        return new Object[size];
+        Object[] newArr = new Object[size];
+        for (int i = 0; i < size; i++) {
+
+            newArr[i] = array[i];
+
+        }
+        return newArr;
     }
 }

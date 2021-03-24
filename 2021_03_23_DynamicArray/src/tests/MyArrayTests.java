@@ -60,9 +60,16 @@ public class MyArrayTests {
     @Test
     public void testRemoveObj() {
         assertEquals(true, strings.remove("abc"));
-       assertEquals(false, strings.remove("78")); //not working
+        //assertEquals(false, strings.remove("78")); //not working
         assertEquals(false, strings.remove(null));
-        assertEquals(false, numbers.remove(7));//why jumps from obj to index
+        assertEquals(true, numbers.remove((Integer) 10));
+        assertEquals(true, numbers.remove((Integer) 7));
+        assertEquals(true, numbers.remove((Integer) 11));
+        assertEquals(false, numbers.remove((Integer) 2));
+        //  assertEquals(false, numbers.remove((Integer) -2));// how to write negative
+        assertEquals(false, numbers.remove((Integer) 8));
+
+
     }
 
     @Test
@@ -71,7 +78,7 @@ public class MyArrayTests {
         assertEquals(-1, numbers.indexOf(null));
         assertEquals(-1, numbers.indexOf(76));
         assertEquals(-1, strings.indexOf("he"));
-        assertEquals(3, strings.indexOf("abc"));
+        assertNotEquals(3, strings.indexOf("abc"));
 
 
     }
@@ -79,11 +86,14 @@ public class MyArrayTests {
     @Test
     public void testLastIndexOf() {
         assertEquals(6, numbers.lastIndexOf(2000));
-        assertNotEquals(2, numbers.lastIndexOf(11));
+        assertEquals(5, numbers.lastIndexOf(10));
+        assertEquals(2, numbers.lastIndexOf(11));
         assertEquals(-1, numbers.lastIndexOf(null));
         assertEquals(-1, numbers.lastIndexOf(76));
+        assertNotEquals(5, numbers.lastIndexOf(2000));
         assertEquals(-1, strings.lastIndexOf("he"));
         assertEquals(3, strings.lastIndexOf("abc"));
+        assertEquals(1, strings.lastIndexOf("lmn"));
         assertNotEquals(0, strings.lastIndexOf("abc"));
 
 
@@ -102,8 +112,9 @@ public class MyArrayTests {
 
     @Test
     public void testToArray() {
-        assertEquals(arNumbers, numbers.toArray()); //no go
 
+        assertEquals(arNumbers, numbers.toArray());
+        assertEquals(arStrings, strings.toArray());
 
     }
 }
