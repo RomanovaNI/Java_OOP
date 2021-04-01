@@ -85,14 +85,14 @@ public class SpeedOfArrayListAndLinkedList {
 
     private static void addByIndexUsingArrayList(List<String> listArray, int maxIterations) {
         while (maxIterations > 0) {
-            listArray.add(0, "Carrot");
+            listArray.add(3, "Carrot");
             maxIterations--;
         }
     }
 
     private static void addByIndexUsingLinkedList(List<String> listLinked, int maxIterations) {
         while (maxIterations > 0) {
-            listLinked.add(0, "Carrot");
+            listLinked.add(3, "Carrot");
             maxIterations--;
         }
     }
